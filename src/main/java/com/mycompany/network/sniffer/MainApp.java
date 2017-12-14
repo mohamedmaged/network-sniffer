@@ -38,53 +38,7 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.show();
         
-PcapNetworkInterface nif;
-    try {
-      nif = new NifSelector().selectNetworkInterface();
-    } catch (IOException e) {
-      e.printStackTrace();
-      return;
-    }
 
- 
-
-    
-
-    if (nif == null) {
-      return;
-    }
-
-    System.out.println(nif.getName() + "(" + nif.getDescription() + ")");
-
-    final PcapHandle handle
-      = nif.openLive(65536, PromiscuousMode.PROMISCUOUS, 100);
-
-    
-    PacketListener listener
-      = new PacketListener() {
-          @Override
-          public void gotPacket(Packet packet) {
-            System.out.println(handle.getTimestamp());
-            System.out.println(packet);
-          }
-        };
-
-    try {
-      handle.loop(10, listener);
-      
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-
-    PcapStat ps = handle.getStats();
-    System.out.println("ps_recv: " + ps.getNumPacketsReceived());
-    System.out.println("ps_drop: " + ps.getNumPacketsDropped());
-    System.out.println("ps_ifdrop: " + ps.getNumPacketsDroppedByIf());
-    if (Platform.isWindows()) {
-      System.out.println("bs_capt: " + ps.getNumPacketsCaptured());
-    }
-
-    handle.close();
     
     }
 
