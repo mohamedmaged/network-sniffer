@@ -8,11 +8,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="746.0" prefWidth="1072.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.network.sniffer.FXMLController">
    <children>
-      <Button fx:id="start" layoutX="209.0" layoutY="14.0" mnemonicParsing="false" text="Start" />
+      <Button fx:id="start" layoutX="209.0" layoutY="14.0" mnemonicParsing="false" onAction="#loginButtonPress" text="Start" />
       <Button fx:id="stop" layoutX="281.0" layoutY="14.0" mnemonicParsing="false" text="Stop" />
-      <TableView layoutX="-3.0" layoutY="69.0" prefHeight="284.0" prefWidth="1075.0">
+      <TableView fx:id="table" layoutX="-3.0" layoutY="69.0" prefHeight="284.0" prefWidth="1075.0">
         <columns>
-          <TableColumn fx:id="No" prefWidth="75.0" text="No." />
+          <TableColumn fx:id="no" prefWidth="75.0" text="No." />
           <TableColumn fx:id="time" prefWidth="75.0" text="Time" />
             <TableColumn fx:id="source" prefWidth="167.0" text="Source" />
             <TableColumn fx:id="destination" minWidth="0.0" prefWidth="126.0" text="Destination" />
@@ -24,11 +24,6 @@
       <TreeView fx:id="tree" layoutX="-3.0" layoutY="354.0" prefHeight="206.0" prefWidth="1075.0" />
       <TextField layoutX="511.0" layoutY="14.0" />
       <Label layoutX="451.0" layoutY="19.0" prefHeight="21.0" prefWidth="45.0" text="Filter" />
-      <MenuButton fx:id="device" layoutX="42.0" layoutY="14.0" mnemonicParsing="false" text="choose device">
-         <items>
-            <MenuItem fx:id="wifi" mnemonicParsing="false" onAction="#wificlicked" text="Unspecified Action" />
-            <MenuItem fx:id="eth" mnemonicParsing="false" onAction="#ethclicked" text="Unspecified Action" />
-         </items>
-      </MenuButton>
+      <MenuButton fx:id="device" layoutX="42.0" layoutY="14.0" mnemonicParsing="false" text="choose device" />
    </children>
 </AnchorPane>

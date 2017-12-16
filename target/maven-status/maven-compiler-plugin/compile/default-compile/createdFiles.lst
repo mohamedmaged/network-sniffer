@@ -1,2 +1,7 @@
 com\mycompany\network\sniffer\FXMLController.class
+com\mycompany\network\sniffer\PcapThread$1$1.class
+com\mycompany\network\sniffer\PcapThread$1.class
+com\mycompany\network\sniffer\thread.class
+com\mycompany\network\sniffer\PcapThread$1$1$1.class
+com\mycompany\network\sniffer\PcapThread.class
 com\mycompany\network\sniffer\MainApp.class
